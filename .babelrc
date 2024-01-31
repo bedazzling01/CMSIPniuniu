@@ -1,0 +1,23 @@
+{
+    "plugins": [
+       "@babel/plugin-transform-runtime",
+       "@babel/plugin-syntax-dynamic-import",
+       [
+        "import",
+        {
+            "libraryName": "ant-design-vue",
+            "libraryDirectory": "lib",
+            "style": false
+        }
+    ] 
+    ],
+    "presets": [
+        "stage-2",
+        [
+            "@babel/preset-env",
+            {
+                "targets": "defaults"
+            }
+        ]
+    ]
+}
