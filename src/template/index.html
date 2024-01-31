@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" />
+    <meta name="page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <% htmlWebpackPlugin.options.css.forEach(function(vendor){%>
+        <% if(vendor){
+    %>
+            <link rel="stylesheet" href="<%= vendor.src %>" />
+            <% } %>
+                <% }) %>
+                    <%
+    htmlWebpackPlugin.options.script.forEach(function(vendor){%>
+                        <% if(vendor){
+    %>
+                            <script src="<%=vendor.src%>"></script>
+                            <%}%>
+                                <% }) %>
+                                    <% if (htmlWebpackPlugin.options.isDevServer &&
+    htmlWebpackPlugin.options.hrmOnly !== true) { %>
+                                        <!-- Webpack Dev Server reload -->
+                                        <script src="/webpack-dev-server.js"></script>
+                                        <% } %>
+
+                                            <script>
+                                                if (window.Adapter && !window.__PRE_RENDER) {
+                                                    // window.Adapter.checkStaticPath("page");
+                                                    if (window.Adapter.isM) {
+                                                        window.Adapter.config({
+                                                            rem: {
+                                                                bline: "by",
+                                                                rval: Math.max(document.documentElement.clientHeight, 1334),
+                                                                resize: true,
+                                                            },
+                                                        });
+                                                    }
+                                                    window.loadingPage = new window.Adapter.WebLoader();
+                                                }
+                                            </script>
+</head>
+
+<body>
+    <% if(htmlWebpackPlugin.options.isProd){ %>
+        <div id="app" data-server-rendered="true"></div>
+        <%}else{%>
+            <div id="app"></div>
+            <% }%>
+</body>
+
+</html>

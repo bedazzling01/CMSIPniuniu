@@ -1,0 +1,324 @@
+/*reset*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+figcaption,
+figure,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: 0.28rem/1.5 Lucida Grande, 'Microsoft YaHei', "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  color: #363636;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal
+}
+code,
+kbd,
+pre,
+samp,
+tt {
+  font-family: "Courier New", Courier, monospace
+}
+small {
+  font-size: 12px
+}
+ul,
+ol,
+li {
+  list-style: none
+}
+a {
+  display: block;
+  text-decoration: none
+}
+abbr[title],
+acronym[title] {
+  border-bottom: 1px dotted;
+  cursor: help
+}
+q:before,
+q:after {
+  content: ''
+}
+legend {
+  color: #000
+}
+fieldset,
+img {
+  border: 0
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+hr {
+  border: 0;
+  height: 1px
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  -webkit-appearance: none;
+  /*去掉webkit默认的表单样式*/
+}
+a,
+img {
+  -webkit-touch-callout: none;
+  /*禁止长按链接与图片弹出菜单*/
+}
+a,
+button,
+input,
+optgroup,
+select,
+textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+body {
+  -webkit-text-size-adjust: 100% !important;
+  /*禁止IOS调整字体大小*/
+}
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  -moz-user-select: none;
+  user-select: none; /* Standard syntax */
+  -webkit-user-drag: none; /* Safari */
+  -ms-user-drag: none; /* IE 10+ and Edge */
+  -moz-user-drag: none;   
+}
+
+/*cover*/
+.cover {
+	position: fixed;
+	z-index: 1000;
+	display: none;
+	height: 100%;
+	background-color: #b6a0e4;
+	display: block;
+}
+.cover .iphone {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-top: -1.2rem/2;
+	margin-left: -1.01rem/2;
+	width: 1.47rem/2;
+	height: 2.19rem/2;
+	background: url("@{imgUrl}phonetip.png") no-repeat;
+	background-size: 100% 100%;
+	-webkit-animation: zhuan 1.5s 0.3s infinite;
+	animation: zhuan 1.5s 0.3s infinite
+}
+.cover p {
+	position: absolute;
+	top: 65%;
+	left: 0;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	font-size: .28rem/2;
+	line-height: 1.5;
+}
+@keyframes zhuan {
+	0% {
+		transform: rotate(-90deg)
+	}
+	50% {
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(-90deg)
+	}
+}
+@-webkit-keyframes zhuan {
+	0% {
+		-webkit-transform: rotate(-90deg)
+	}
+	50% {
+		-webkit-transform: rotate(0deg)
+	}
+	100% {
+		-webkit-transform: rotate(-90deg)
+	}
+}
+@media screen and (orientation: landscape) {
+	.cover {
+		display: block
+	}
+}
+/*cover*/
+.fl{
+  float: left;
+}
+.clearfix{
+  overflow:hidden
+}
+.noheight{
+	height: auto !important;
+}
+.flexbox {
+	display: flex;
+	align-items: center;
+	&.end {
+		justify-content: flex-end;
+	}
+}
+
+:root{
+
+  --scrollColor:#818181;
+  --scrollColorOver:#424242;
+}
+
+/*滚动条样式*/
+::-webkit-scrollbar {
+  /* 滚动条整体部分 */
+  width: 10px;
+  margin-right: 2px;
+}
+
+::-webkit-scrollbar-button {
+  /* 滚动条两端的按钮 */
+  width: 4px;
+  background-color: #eaeaea;
+  //background-color: transparent;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+  margin-bottom: 1px
+}
+
+::-webkit-scrollbar-track {
+  /* 外层轨道 */
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-track-piece {
+  /*内层轨道，滚动条中间部分 */
+  background-color: #eaeaea;
+}
+
+::-webkit-scrollbar-thumb {
+  /* 滑块 */
+  width:6px;
+  background: var(--scrollColor);
+}
+
+::-webkit-scrollbar-corner {
+  /* 边角 */
+  width: 6px;
+  background-color:  var(--scrollColor);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* 鼠标移入滑块 */
+  background: var(--scrollColor);
+}
+
+@media only screen and (max-width: 900px) {
+    /*滚动条样式*/
+  ::-webkit-scrollbar {
+    /* 滚动条整体部分 */
+    width: 0.10rem;
+    margin-right:0.01rem;
+  }
+
+  ::-webkit-scrollbar-button {
+    /* 滚动条两端的按钮 */
+    width: 0.04rem;
+    background-color: #eaeaea;
+    //background-color: transparent;
+  }
+
+  ::-webkit-scrollbar:horizontal {
+    height: 0.10rem;
+    margin-bottom: 0.01rem
+  }
+
+  ::-webkit-scrollbar-track {
+    /* 外层轨道 */
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    /*内层轨道，滚动条中间部分 */
+    background-color: #eaeaea;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    /* 滑块 */
+    width:0.06rem;
+    background: var(--scrollColor);
+  }
+
+  ::-webkit-scrollbar-corner {
+    /* 边角 */
+    width:0.06rem;
+    background-color:  var(--scrollColor);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    /* 鼠标移入滑块 */
+    background: var(--scrollColor);
+  }
+}
+
+
