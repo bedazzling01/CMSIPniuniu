@@ -1,13 +1,16 @@
 <script setup>
 import { onBeforeMount, nextTick, watchEffect } from "vue";
 import { touchResolver, swipeTo, resetSwipeTo } from "./service/touchResolver";
+import Quiz from "@/app/components/Quiz";
+import Painter from '@/app/components/Painter';
+
 let slider = null;
 onBeforeMount(() => {
   nextTick(() => {
     touchResolver(document.querySelector("#container"));
     slider = new window.Adapter.SliderPage({
       item: document.querySelectorAll("#container>section"), // 需要滑动的页面class类名（DOM对象）
-      cur: 2, // 可设置（初始化当前显示第几页)，一般为0。
+      cur: 3, // 可设置（初始化当前显示第几页)，一般为0。
       activeClass: "pageOpen", // 给当前项添加的类名
       loop: false, // 默认false 是否要循环
       effect: "vSlide", // 切换方式 另外几种是'vSlide',‘hSlide’
@@ -45,8 +48,12 @@ watchEffect(() => {
   <div id="container">
     <section style="background-color: rgb(255, 123, 0)">page1</section>
     <section style="background-color: rgb(179, 255, 0)">page2</section>
-    <section style="background-color: rgb(0, 153, 255)">page3</section>
-    <section style="background-color: rgb(195, 0, 255)">page4</section>
+    <section style="background-color: rgb(0, 153, 255)">
+      <Quiz />
+    </section>
+    <section style="background-color: rgb(195, 0, 255)">
+      <Painter />
+    </section>
     <section style="background-color: rgb(255, 0, 64)">page5</section>
     <section style="background-color: rgb(0, 26, 255)">page6</section>
     <section style="background-color: rgb(0, 255, 85)">page7</section>
