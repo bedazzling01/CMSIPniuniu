@@ -47,11 +47,16 @@
 </head>
 
 <body>
+    <div class="cover posa">
+        <div class="iphone Rotate"></div>
+        <p>请将屏幕竖向浏览，体验更好</p>
+    </div>
     <% if(htmlWebpackPlugin.options.isProd){ %>
         <div id="app" data-server-rendered="true"></div>
         <%}else{%>
             <div id="app"></div>
             <% }%>
+                <audio id="autoplay" loop="loop" src="media/1.mp3" muted="muted"></audio>
 </body>
 
 </html>

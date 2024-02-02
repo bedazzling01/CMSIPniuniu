@@ -100,3 +100,130 @@ body {
   background-color: @primary-color;
   border: 2px solid @primary-color;
 }
+
+/*music*/
+.media-wrap {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  z-index: 90;
+  border-radius: 50%;
+  top: 6%;
+  right: 5%;
+  z-index: 2000;
+  pointer-events: auto;
+  // display: none;
+}
+.media-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.media-wrap .music_on {
+  display: none;
+}
+.media-wrap .music_off {
+  display: block;
+}
+.media-wrap.on .music_on {
+  display: block;
+}
+.media-wrap.on .music_off {
+  display: none;
+}
+@-webkit-keyframes music {
+  0%,
+  50%,
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(36deg);
+  }
+  75% {
+    -webkit-transform: rotate(-36deg);
+  }
+}
+@keyframes music {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(36deg);
+  }
+  75% {
+    transform: rotate(-36deg);
+  }
+}
+.media-wrap.on {
+  .music_on {
+    -webkit-animation: music 1.2s linear infinite;
+    animation: music 1.2s linear infinite;
+    background-position: 0 0;
+  }
+}
+/*music*/
+
+/*cover*/
+.cover {
+  height: 100%;
+  background-color: #c2d3f2;
+  z-index: 9999;
+  display: none;
+}
+.cover .iphone {
+  width: 2.9rem;
+  height: 4.36rem;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-top: -2.18rem;
+  margin-left: -1.45rem;
+  background: url("images/phonetip.png") no-repeat;
+  background-size: 100% 100%;
+  animation: zhuan 1.5s 0.3s infinite;
+  -webkit-animation: zhuan 1.5s 0.3s infinite;
+}
+.cover p {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-size: 0.5rem;
+  line-height: 1.5;
+}
+@keyframes zhuan {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+@-webkit-keyframes zhuan {
+  0% {
+    -webkit-transform: rotate(-90deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+  }
+}
+@media screen and (orientation: landscape) {
+  .cover {
+    display: block;
+  }
+}
+/*cover*/

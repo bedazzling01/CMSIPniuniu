@@ -20,12 +20,15 @@
     "Date": "2022-10-25"
   },
   "COMMON_CONFIG": {
-    "title": "招商证券IP牛牛H5职业人格测试",
-    "description": "招商证券IP牛牛H5职业人格测试",
+    "title": "职业性格大解密",
+    "description": "牛牛新年特别策划",
     "alias": "ideal-project-starter3.0"
   },
   "VERSION": "3.0.0.20221206_RC",
   "PRE_RENDER": false,
   "CSS_VENDORS": [{ "src": "css/default.css" }],
-  "SCRIPT_VENDORS": [ { "src": "https://res.wx.qq.com/open/js/jweixin-1.2.0.js" },{ "src": "js/adapter.min.js" }]
+  "SCRIPT_VENDORS": [
+    { "src": "https://res.wx.qq.com/open/js/jweixin-1.2.0.js" },
+    { "src": "js/adapter.min.js" }
+  ]
 }

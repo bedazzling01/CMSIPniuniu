@@ -1,10 +1,13 @@
-import { defineStore} from 'pinia';
-export const useAppStore=defineStore('app',{
-  state:()=>({
+import { defineStore } from 'pinia';
 
+export const useAppStore = defineStore('app', {
+  state: () => ({
+    escore: 0
   }),
-  getters:{},
-  actions:{
-    
+  getters: {},
+  actions: {
+    saveEscore(score) {
+      this.escore = score;
+    }
   }
-})
+});
