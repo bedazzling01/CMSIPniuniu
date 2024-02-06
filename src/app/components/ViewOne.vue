@@ -4,7 +4,10 @@
     <img src="images/p1-deng01.png" alt="deng01" class="p1-deng01" />
     <img src="images/p1-deng02.png" alt="deng01" class="p1-deng02" />
     <img src="images/p1-bigtitle.png" alt="title" class="p1-title" />
-    <img src="images/p1-slogin.png" alt="slogin" class="p1-slogin" />
+    <div class="p1-slogin cardmask">
+      <img src="images/p1-slogin.png" alt="slogin" class="slogin" />
+      <img src="images/guang2.png" class="guang" />
+    </div>
     <div class="p1-card">
       <img src="images/p1_bigcard.png" alt="card" class="p1-bigcard" />
       <img src="images/p1_txt01.png" alt="card" class="p1-txt01" />
@@ -86,8 +89,26 @@ function clickHandle() {
     left: 0;
     top: 16%;
     width: 100%;
-    height: auto;
-    max-height: 12.368%;
+    height: 12.368%;
+    overflow: hidden;
+    & > img.slogin {
+      width: 100%;
+      height: auto;
+    }
+    & > img.guang {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      left: 0;
+      top: 0;
+      animation: guangswing 2s 0s infinite;
+    }
+  }
+  & > .cardmask {
+    -webkit-mask: no-repeat center / 100% auto;
+    mask: no-repeat center / 100% auto;
+    -webkit-mask-image: url("~images/p1-slogin.png");
+    mask-image: url("~images/p1-slogin.png");
   }
   .p1-card {
     position: absolute;
@@ -221,6 +242,18 @@ function clickHandle() {
   }
   100% {
     -webkit-transform: translate(4%, 0%);
+  }
+}
+
+@keyframes guangswing {
+  0% {
+    opacity: 1;
+    transform: translateX(20%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-60%);
   }
 }
 </style>

@@ -11,7 +11,9 @@
     </div>
     <div class="inner-cover">
       <div class="card-box">
-        <div class="card card-guang"></div>
+        <div class="card guang-box guang-mask">
+          <img src="images/cards/guang.png" />
+        </div>
       </div>
     </div>
     <div class="btns">
@@ -135,7 +137,7 @@ function closePop() {
     width: 100%;
     padding-top: 7.8%;
     padding-bottom: 4.2%;
-    background: url("~images/cards/guang.png") no-repeat;
+    //background: url("~images/cards/guang.png") no-repeat;
     background-size: cover;
     background-position: center top;
     top: 0;
@@ -145,10 +147,28 @@ function closePop() {
     display: flex;
     align-items: center;
     transform-origin: 50% 50%;
-    animation: cardflash 4s 0.2s infinite;
+    //
     .card-box {
       width: 100%;
       height: 78%;
+      .guang-box {
+        overflow: hidden;
+        position: relative;
+        & > img {
+          width: 100%;
+          height: auto;
+          position: absolute;
+          left: 0;
+          top: 0;
+          animation: cardflash 4s 0.2s infinite;
+        }
+      }
+      .guang-mask {
+        -webkit-mask: no-repeat right center / auto 100%;
+        mask: no-repeat right center / auto 100%;
+        -webkit-mask-image: url("~images/cards/1.png");
+        mask-image: url("~images/cards/1.png");
+      }
     }
   }
   .popup {
@@ -256,17 +276,12 @@ function closePop() {
 @keyframes cardflash {
   0% {
     opacity: 1;
-    transform: translateX(10%);
-  }
-
-  40% {
-    opacity: 0;
-    transform: translateX(-50%);
+    transform: translateX(20%);
   }
 
   100% {
     opacity: 0;
-    transform: translateX(-50%);
+    transform: translateX(-70%);
   }
 }
 </style>

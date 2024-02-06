@@ -15,7 +15,7 @@ console.log("test.value=", test);
 onBeforeMount(() => {
   window.Adapter.useShare({
     title: "职业性格大解密",
-    desc: "牛牛新年特别策划",
+    desc: "HR牛牛新年特别策划",
     imgUrl: "images/share.jpg",
     debug: false,
     success: function (res) {
@@ -40,7 +40,7 @@ function musicResolver() {
       audio.muted = false;
       audio.pause();
       setTimeout(() => {
-        audio.playbackRate = 0.75;
+        //audio.playbackRate = 0.5;
         audio.play();
       }, 100);
       document.removeEventListener("touchstart", musicResolver, false);
@@ -80,7 +80,7 @@ function musicSwitch() {
     audio.addEventListener("ended", () => {
       console.log("audio ended happend");
       audio.load();
-      audio.playbackRate = 0.75;
+      //audio.playbackRate = 0.5;
       audio.play();
     });
   }
@@ -99,7 +99,7 @@ function musicSwitch() {
         }
       } else {
         if (audio.paused) {
-          audio.playbackRate = 0.75;
+          //audio.playbackRate = 0.5;
           audio.play();
           isPalying = true;
         } else {

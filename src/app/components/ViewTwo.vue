@@ -35,18 +35,14 @@
       </div>
     </div>
     <div :class="card3">
+      <div class="text-item"></div>
       <div class="text-item">
         <span>今天，HR牛牛就带您一起</span>
       </div>
       <div class="text-item">
         <span>解密您的职业性格</span>
       </div>
-      <div class="text-item">
-        <span>助您在未来发展中</span>
-      </div>
-      <div class="text-item">
-        <span>找到更清晰的方向和目标</span>
-      </div>
+      <div class="text-item"></div>
       <div class="text-item"></div>
     </div>
     <img
@@ -164,7 +160,7 @@ function clickHandle() {
         text-align: center;
         font-weight: 500;
         color: #ffffff;
-        font-family: "Microsoft YaHei,'black', SimHei, sans-serif;";
+        font-family: "'Source Han Sans SC','Microsoft YaHei','black',SimHei,sans-serif" !important;
         white-space: nowrap;
         text-rendering: optimizeLegibility;
         text-shadow: 1px 1px 5px #615e5e;
